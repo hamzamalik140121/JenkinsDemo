@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AF7F9D1-1B5A-4F1F-9E45-EE21BC2062EA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FYP</RootNamespace>
+    <AssemblyName>FYP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ProjectOxford.Common, Version=1.0.324.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ProjectOxford.Common.1.0.324\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Microsoft.ProjectOxford.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ProjectOxford.Emotion, Version=1.0.336.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ProjectOxford.Emotion.1.0.336\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Microsoft.ProjectOxford.Emotion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MsgPack, Version=0.6.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsgPack.Cli.0.6.2\lib\net45\MsgPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Msgpack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Msgpack.0.1.10\lib\net45\Newtonsoft.Msgpack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\audio.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\easy-responsive-tabs.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\icon-font.css" />
+    <Content Include="assets\css\jplayer.blue.monday.min.css" />
+    <Content Include="assets\css\now-ui-kit.css" />
+    <Content Include="assets\css\popuo-box.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\styles.css" />
+    <Content Include="assets\fonts\digital-7-webfont.svg" />
+    <Content Include="assets\fonts\digital-7_italic-webfont.svg" />
+    <Content Include="assets\fonts\digital-7_mono-webfont.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\11.jpg" />
+    <Content Include="assets\images\2.png" />
+    <Content Include="assets\images\22.jpg" />
+    <Content Include="assets\images\33.jpg" />
+    <Content Include="assets\images\6.png" />
+    <Content Include="assets\images\a1.jpg" />
+    <Content Include="assets\images\a10.jpg" />
+    <Content Include="assets\images\a11.jpg" />
+    <Content Include="assets\images\a12.jpg" />
+    <Content Include="assets\images\a2.jpg" />
+    <Content Include="assets\images\a3.jpg" />
+    <Content Include="assets\images\a4.jpg" />
+    <Content Include="assets\images\a5.jpg" />
+    <Content Include="assets\images\a6.jpg" />
+    <Content Include="assets\images\a7.jpg" />
+    <Content Include="assets\images\a8.jpg" />
+    <Content Include="assets\images\a9.jpg" />
+    <Content Include="assets\images\apps.png" />
+    <Content Include="assets\images\arrow.png" />
+    <Content Include="assets\images\arrow2.png" />
+    <Content Include="assets\images\c1.jpg" />
+    <Content Include="assets\images\c2.jpg" />
+    <Content Include="assets\images\c3.jpg" />
+    <Content Include="assets\images\c4.jpg" />
+    <Content Include="assets\images\c5.jpg" />
+    <Content Include="assets\images\c6.jpg" />
+    <Content Include="assets\images\dot.png" />
+    <Content Include="assets\images\fashion.jpg" />
+    <Content Include="assets\images\jplayer.blue.monday.png" />
+    <Content Include="assets\images\jplayer.blue.monday.video.play.png" />
+    <Content Include="assets\images\lock.png" />
+    <Content Include="assets\images\pic_error.png" />
+    <Content Include="assets\images\play.png" />
+    <Content Include="assets\images\play1.png" />
+    <Content Include="assets\images\play2.png" />
+    <Content Include="assets\images\play4.png" />
+    <Content Include="assets\images\play5.png" />
+    <Content Include="assets\images\radio.png" />
+    <Content Include="assets\images\radio1.png" />
+    <Content Include="assets\images\search.png" />
+    <Content Include="assets\images\so.png" />
+    <Content Include="assets\images\social.png" />
+    <Content Include="assets\images\tech.jpg" />
+    <Content Include="assets\images\tick.png" />
+    <Content Include="assets\images\user.png" />
+    <Content Include="assets\images\v1.jpg" />
+    <Content Include="assets\images\v10.jpg" />
+    <Content Include="assets\images\v11.jpg" />
+    <Content Include="assets\images\v2.jpg" />
+    <Content Include="assets\images\v21.jpg" />
+    <Content Include="assets\images\v22.jpg" />
+    <Content Include="assets\images\v3.jpg" />
+    <Content Include="assets\images\v33.jpg" />
+    <Content Include="assets\images\v4.jpg" />
+    <Content Include="assets\images\v44.jpg" />
+    <Content Include="assets\images\v5.jpg" />
+    <Content Include="assets\images\v55.jpg" />
+    <Content Include="assets\images\v6.jpeg" />
+    <Content Include="assets\images\v6.jpg" />
+    <Content Include="assets\images\v66.jpg" />
+    <Content Include="assets\images\v7.jpg" />
+    <Content Include="assets\images\v77.jpg" />
+    <Content Include="assets\images\v8.jpg" />
+    <Content Include="assets\images\v88.jpg" />
+    <Content Include="assets\images\v9.jpg" />
+    <Content Include="assets\images\v99.jpg" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\classie.js" />
+    <Content Include="assets\js\core\bootstrap.min.js" />
+    <Content Include="assets\js\core\jquery.3.2.1.min.js" />
+    <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\easyResponsiveTabs.js" />
+    <Content Include="assets\js\jplayer.playlist.min.js" />
+    <Content Include="assets\js\jquery-2.1.4.js" />
+    <Content Include="assets\js\jquery.flexisel.js" />
+    <Content Include="assets\js\jquery.jplayer.min.js" />
+    <Content Include="assets\js\jquery.magnific-popup.js" />
+    <Content Include="assets\js\jquery.nicescroll.js" />
+    <Content Include="assets\js\mediaelement-and-player.min.js" />
+    <Content Include="assets\js\now-ui-kit.js" />
+    <Content Include="assets\js\plugins\bootstrap-datepicker.js" />
+    <Content Include="assets\js\plugins\bootstrap-switch.js" />
+    <Content Include="assets\js\plugins\jquery.sharrre.js" />
+    <Content Include="assets\js\plugins\nouislider.min.js" />
+    <Content Include="assets\js\responsiveslides.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\js\uisearch.js" />
+    <Content Include="assets\media\Blue Browne.mp3" />
+    <Content Include="assets\media\Georgia.mp3" />
+    <Content Include="assets\sass\base\_page.scss" />
+    <Content Include="assets\sass\base\_typography.scss" />
+    <Content Include="assets\sass\components\_box.scss" />
+    <Content Include="assets\sass\components\_button.scss" />
+    <Content Include="assets\sass\components\_form.scss" />
+    <Content Include="assets\sass\components\_icon.scss" />
+    <Content Include="assets\sass\components\_image.scss" />
+    <Content Include="assets\sass\components\_list.scss" />
+    <Content Include="assets\sass\components\_table.scss" />
+    <Content Include="assets\sass\ie9.scss" />
+    <Content Include="assets\sass\layout\_bg.scss" />
+    <Content Include="assets\sass\layout\_footer.scss" />
+    <Content Include="assets\sass\layout\_header.scss" />
+    <Content Include="assets\sass\layout\_main.scss" />
+    <Content Include="assets\sass\layout\_wrapper.scss" />
+    <Content Include="assets\sass\libs\_functions.scss" />
+    <Content Include="assets\sass\libs\_mixins.scss" />
+    <Content Include="assets\sass\libs\_skel.scss" />
+    <Content Include="assets\sass\libs\_vars.scss" />
+    <Content Include="assets\sass\main.scss" />
+    <Content Include="assets\sass\noscript.scss" />
+    <Content Include="assets\fonts\nucleo-outline.eot" />
+    <Content Include="assets\fonts\nucleo-outline.ttf" />
+    <Content Include="assets\fonts\nucleo-outline.woff" />
+    <Content Include="assets\fonts\nucleo-outline.woff2" />
+    <Content Include="assets\sass\now-ui-kit.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_badges.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_datepicker.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_dropdown.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_inputs.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_modals.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_navbar.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_pages.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_popovers.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_transparency.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_vendor-prefixes.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-bootstrap-switch.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-datepicker.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="assets\sass\now-ui-kit\_alerts.scss" />
+    <Content Include="assets\sass\now-ui-kit\_badges.scss" />
+    <Content Include="assets\sass\now-ui-kit\_buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\_cards.scss" />
+    <Content Include="assets\sass\now-ui-kit\_carousel.scss" />
+    <Content Include="assets\sass\now-ui-kit\_checkboxes-radio.scss" />
+    <Content Include="assets\sass\now-ui-kit\_dropdown.scss" />
+    <Content Include="assets\sass\now-ui-kit\_example-pages.scss" />
+    <Content Include="assets\sass\now-ui-kit\_footers.scss" />
+    <Content Include="assets\sass\now-ui-kit\_images.scss" />
+    <Content Include="assets\sass\now-ui-kit\_inputs.scss" />
+    <Content Include="assets\sass\now-ui-kit\_misc.scss" />
+    <Content Include="assets\sass\now-ui-kit\_mixins.scss" />
+    <Content Include="assets\sass\now-ui-kit\_modals.scss" />
+    <Content Include="assets\sass\now-ui-kit\_navbar.scss" />
+    <Content Include="assets\sass\now-ui-kit\_nucleo-outline.scss" />
+    <Content Include="assets\sass\now-ui-kit\_pagination.scss" />
+    <Content Include="assets\sass\now-ui-kit\_pills.scss" />
+    <Content Include="assets\sass\now-ui-kit\_popups.scss" />
+    <Content Include="assets\sass\now-ui-kit\_progress.scss" />
+    <Content Include="assets\sass\now-ui-kit\_responsive.scss" />
+    <Content Include="assets\sass\now-ui-kit\_sections.scss" />
+    <Content Include="assets\sass\now-ui-kit\_social-buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\_tabs.scss" />
+    <Content Include="assets\sass\now-ui-kit\_typography.scss" />
+    <Content Include="assets\sass\now-ui-kit\_variables.scss" />
+    <Content Include="assets\vid.mp4" />
+    <Content Include="assets\vid2.mp4" />
+    <Content Include="assets\video\Blue Browne.mp3" />
+    <Content Include="assets\video\Georgia.mp3" />
+    <Content Include="emotion.txt" />
+    <Content Include="microsoft.projectoxford.emotion.2.0.40.nupkg" />
+    <Content Include="packages.config" />
+    <Content Include="pages\404.html" />
+    <Content Include="pages\blog.html" />
+    <Content Include="pages\browse.html" />
+    <Content Include="pages\contact.html" />
+    <Content Include="pages\HappyMedia.aspx" />
+    <Content Include="pages\index.html" />
+    <Content Include="pages\media.aspx" />
+    <Content Include="pages\profile.aspx" />
+    <Content Include="pages\radio.html" />
+    <Content Include="pages\single.html" />
+    <Content Include="pages\typography.html" />
+    <Content Include="speakClient.js" />
+    <Content Include="speakGenerator.js" />
+    <Content Include="speakWorker.js" />
+    <Content Include="webcam.min.js" />
+    <Content Include="assets\fonts\digital-7-webfont.eot" />
+    <Content Include="assets\fonts\digital-7-webfont.ttf" />
+    <Content Include="assets\fonts\digital-7-webfont.woff" />
+    <Content Include="assets\fonts\digital-7_italic-webfont.eot" />
+    <Content Include="assets\fonts\digital-7_italic-webfont.ttf" />
+    <Content Include="assets\fonts\digital-7_italic-webfont.woff" />
+    <Content Include="assets\fonts\digital-7_mono-webfont.eot" />
+    <Content Include="assets\fonts\digital-7_mono-webfont.ttf" />
+    <Content Include="assets\fonts\digital-7_mono-webfont.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\Lato-Regular.ttf" />
+    <Content Include="assets\fonts\MavenPro-Bold.ttf" />
+    <Content Include="assets\fonts\MavenPro-Regular.ttf" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="assets\fonts\WeatherIcons-Regular.otf" />
+    <Content Include="assets\media\Blue Browne.ogg" />
+    <Content Include="assets\media\Georgia.ogg" />
+    <Content Include="assets\video\Blue Browne.ogg" />
+    <Content Include="assets\video\Georgia.ogg" />
+    <Content Include="words.txt" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\ie9.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\noscript.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\skel.min.js" />
+    <Content Include="assets\js\util.js" />
+    <Content Include="home.aspx" />
+    <Content Include="assets\images\apple-icon.png" />
+    <Content Include="assets\images\avatar.jpg" />
+    <Content Include="assets\images\bg.jpg" />
+    <Content Include="assets\images\bg1.jpg" />
+    <Content Include="assets\images\bg11.jpg" />
+    <Content Include="assets\images\bg3.jpg" />
+    <Content Include="assets\images\bg4.jpg" />
+    <Content Include="assets\images\bg5.jpg" />
+    <Content Include="assets\images\bg6.jpg" />
+    <Content Include="assets\images\bg7.jpg" />
+    <Content Include="assets\images\bg8.jpg" />
+    <Content Include="assets\images\blurred-image-1.jpg" />
+    <Content Include="assets\images\creative-tim-white-slim2.png" />
+    <Content Include="assets\images\default-avatar.png" />
+    <Content Include="assets\images\eva.jpg" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\flags\AD.png" />
+    <Content Include="assets\images\flags\AE.png" />
+    <Content Include="assets\images\flags\AG.png" />
+    <Content Include="assets\images\flags\AM.png" />
+    <Content Include="assets\images\flags\AR.png" />
+    <Content Include="assets\images\flags\AT.png" />
+    <Content Include="assets\images\flags\AU.png" />
+    <Content Include="assets\images\flags\BE.png" />
+    <Content Include="assets\images\flags\BF.png" />
+    <Content Include="assets\images\flags\BG.png" />
+    <Content Include="assets\images\flags\BO.png" />
+    <Content Include="assets\images\flags\BR.png" />
+    <Content Include="assets\images\flags\CA.png" />
+    <Content Include="assets\images\flags\CD.png" />
+    <Content Include="assets\images\flags\CG.png" />
+    <Content Include="assets\images\flags\CH.png" />
+    <Content Include="assets\images\flags\CL.png" />
+    <Content Include="assets\images\flags\CM.png" />
+    <Content Include="assets\images\flags\CN.png" />
+    <Content Include="assets\images\flags\CO.png" />
+    <Content Include="assets\images\flags\CZ.png" />
+    <Content Include="assets\images\flags\DE.png" />
+    <Content Include="assets\images\flags\DJ.png" />
+    <Content Include="assets\images\flags\DK.png" />
+    <Content Include="assets\images\flags\DZ.png" />
+    <Content Include="assets\images\flags\EE.png" />
+    <Content Include="assets\images\flags\EG.png" />
+    <Content Include="assets\images\flags\ES.png" />
+    <Content Include="assets\images\flags\FI.png" />
+    <Content Include="assets\images\flags\FR.png" />
+    <Content Include="assets\images\flags\GA.png" />
+    <Content Include="assets\images\flags\GB.png" />
+    <Content Include="assets\images\flags\GM.png" />
+    <Content Include="assets\images\flags\GT.png" />
+    <Content Include="assets\images\flags\HN.png" />
+    <Content Include="assets\images\flags\HT.png" />
+    <Content Include="assets\images\flags\HU.png" />
+    <Content Include="assets\images\flags\ID.png" />
+    <Content Include="assets\images\flags\IE.png" />
+    <Content Include="assets\images\flags\IL.png" />
+    <Content Include="assets\images\flags\IN.png" />
+    <Content Include="assets\images\flags\IQ.png" />
+    <Content Include="assets\images\flags\IR.png" />
+    <Content Include="assets\images\flags\IT.png" />
+    <Content Include="assets\images\flags\JM.png" />
+    <Content Include="assets\images\flags\JO.png" />
+    <Content Include="assets\images\flags\JP.png" />
+    <Content Include="assets\images\flags\KG.png" />
+    <Content Include="assets\images\flags\KN.png" />
+    <Content Include="assets\images\flags\KP.png" />
+    <Content Include="assets\images\flags\KR.png" />
+    <Content Include="assets\images\flags\KW.png" />
+    <Content Include="assets\images\flags\KZ.png" />
+    <Content Include="assets\images\flags\LA.png" />
+    <Content Include="assets\images\flags\LB.png" />
+    <Content Include="assets\images\flags\LC.png" />
+    <Content Include="assets\images\flags\LS.png" />
+    <Content Include="assets\images\flags\LU.png" />
+    <Content Include="assets\images\flags\LV.png" />
+    <Content Include="assets\images\flags\MG.png" />
+    <Content Include="assets\images\flags\MK.png" />
+    <Content Include="assets\images\flags\ML.png" />
+    <Content Include="assets\images\flags\MM.png" />
+    <Content Include="assets\images\flags\MT.png" />
+    <Content Include="assets\images\flags\MX.png" />
+    <Content Include="assets\images\flags\NA.png" />
+    <Content Include="assets\images\flags\NE.png" />
+    <Content Include="assets\images\flags\NG.png" />
+    <Content Include="assets\images\flags\NI.png" />
+    <Content Include="assets\images\flags\NL.png" />
+    <Content Include="assets\images\flags\NO.png" />
+    <Content Include="assets\images\flags\OM.png" />
+    <Content Include="assets\images\flags\PA.png" />
+    <Content Include="assets\images\flags\PE.png" />
+    <Content Include="assets\images\flags\PG.png" />
+    <Content Include="assets\images\flags\PK.png" />
+    <Content Include="assets\images\flags\PL.png" />
+    <Content Include="assets\images\flags\PT.png" />
+    <Content Include="assets\images\flags\PY.png" />
+    <Content Include="assets\images\flags\QA.png" />
+    <Content Include="assets\images\flags\RO.png" />
+    <Content Include="assets\images\flags\RU.png" />
+    <Content Include="assets\images\flags\RW.png" />
+    <Content Include="assets\images\flags\SA.png" />
+    <Content Include="assets\images\flags\SE.png" />
+    <Content Include="assets\images\flags\SG.png" />
+    <Content Include="assets\images\flags\SL.png" />
+    <Content Include="assets\images\flags\SN.png" />
+    <Content Include="assets\images\flags\SO.png" />
+    <Content Include="assets\images\flags\SV.png" />
+    <Content Include="assets\images\flags\TD.png" />
+    <Content Include="assets\images\flags\TJ.png" />
+    <Content Include="assets\images\flags\TL.png" />
+    <Content Include="assets\images\flags\TR.png" />
+    <Content Include="assets\images\flags\TZ.png" />
+    <Content Include="assets\images\flags\UA.png" />
+    <Content Include="assets\images\flags\US.png" />
+    <Content Include="assets\images\flags\VE.png" />
+    <Content Include="assets\images\flags\VN.png" />
+    <Content Include="assets\images\flags\YE.png" />
+    <Content Include="assets\images\header.jpg" />
+    <Content Include="assets\images\hero-image-1.png" />
+    <Content Include="assets\images\hero-image-2.png" />
+    <Content Include="assets\images\hero-image-3.png" />
+    <Content Include="assets\images\invision-white-slim.png" />
+    <Content Include="assets\images\landing.jpg" />
+    <Content Include="assets\images\login.jpg" />
+    <Content Include="assets\images\logo-square.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\now-logo.png" />
+    <Content Include="assets\images\nucleo-logo.svg" />
+    <Content Include="assets\images\overlay.png" />
+    <Content Include="assets\images\pic01.jpg" />
+    <Content Include="assets\images\pic02.jpg" />
+    <Content Include="assets\images\pic03.jpg" />
+    <Content Include="assets\images\profile.jpg" />
+    <Content Include="assets\images\ryan.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\hybird.cs" />
+    <Compile Include="classes\login.cs" />
+    <Compile Include="classes\neuralNetwork\CryptoRandom.cs" />
+    <Compile Include="classes\neuralNetwork\Dendrite.cs" />
+    <Compile Include="classes\neuralNetwork\Layer.cs" />
+    <Compile Include="classes\neuralNetwork\NetworkHelper.cs" />
+    <Compile Include="classes\neuralNetwork\NeuralNetwork.cs" />
+    <Compile Include="classes\neuralNetwork\Neuron.cs" />
+    <Compile Include="classes\profile.cs" />
+    <Compile Include="classes\recommendation.cs" />
+    <Compile Include="classes\recommendationVideos.cs" />
+    <Compile Include="classes\UserLog.cs" />
+    <Compile Include="classes\UserProfile.cs" />
+    <Compile Include="Controller\database.cs" />
+    <Compile Include="Controller\FASAD.cs" />
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\HappyMedia.aspx.cs">
+      <DependentUpon>HappyMedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\HappyMedia.aspx.designer.cs">
+      <DependentUpon>HappyMedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\media.aspx.cs">
+      <DependentUpon>media.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\media.aspx.designer.cs">
+      <DependentUpon>media.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testing\FASADTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\images\presentation-page\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WinHttp">
+      <Guid>{662901FC-6951-4854-9EB2-D9A2570F2B2E}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>38619</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:38619/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
